@@ -23,8 +23,8 @@ long_window = 26
 def data() :
   print("starting data..")
 
-  timeframe = '1d'
-  num_bars = 500
+  timeframe = '30m'
+  num_bars = 1000
   bars = exchange.fetch_ohlcv(symbol, timeframe=timeframe, limit=num_bars)
 
   df_d = pd.DataFrame(bars, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume'])

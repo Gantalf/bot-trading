@@ -32,3 +32,5 @@ Ejecución del bot:
 La función bot() se ejecuta cada 28 segundos para verificar las condiciones del mercado y tomar decisiones de trading.
 Si no hay posiciones abiertas, el bot coloca órdenes de compra o venta basadas en la tendencia determinada por la SMA de 20 días.
 Si hay una posición abierta, el bot no coloca nuevas órdenes.
+
+

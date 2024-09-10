@@ -1,3 +1,5 @@
+Trading Algorítmico - Trend Following
+
 Estrategia Utilizada
 La estrategia utilizada en este bot se basa en el seguimiento de tendencias con dos medias móviles simples (SMA) diferentes:
 

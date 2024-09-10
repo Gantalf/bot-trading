@@ -1,0 +1,3 @@
+2024-09-10 12:43:31,666 - INFO - OHLCV fetched. Current price: 57006.1
+2024-09-10 12:43:31,965 - INFO - Order book fetched. Top ask: [57036.8, 4.0], Top bid: [57030.8, 3350.0]
+2024-09-10 12:43:31,965 - INFO - Market depth analyzed. Asks volume: 15418.0, Bids volume: 52069.0

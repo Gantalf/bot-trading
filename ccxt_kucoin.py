@@ -18,16 +18,17 @@ exchange = ccxt.kucoinfutures({
     'password': os.getenv("API_PASS_KUC")
 })
 
-
-symbol = 'XBTUSDTM'
+#XBTUSDTM, WIFUSDTM
+symbol = 'WIFUSDTM'
 pos_size = 2
 params = {
     'timeInForce': 'GTC', # Cambiado de 'PostOnly' a 'GTC' para compatibilidad con Binance,
     'leverage': float(10)
 }
-target = 0.1
+target = 10 #procentaje
+stop_loss = 5
 
-# pos_dict = exchange.fetchPosition(symbol)
+# pos_dict = exchange.fetchPositions()
 # print(f'pos_dict', pos_dict)
 
 def ask_bid():
@@ -38,7 +39,7 @@ def ask_bid():
 
 def daily_sma():
     print("starting daily_sma...")
-    timeframe = '1d'
+    timeframe = '4h'
     num_bars = 100
     bars = exchange.fetchOHLCV(symbol, timeframe=timeframe, limit=num_bars)
     df_d = pd.DataFrame(bars, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume'])
@@ -100,11 +101,10 @@ def pnl_close():
     print('checking to see if it is time to exit')
     try:
         pos_dict = exchange.fetchPosition(symbol)
-        print(f'pos_dict', pos_dict)
+        print(f'pos_dict: {pos_dict}')
         if not pos_dict:
             print("No open positions found.")
             return False, False, 0, None
-        
 
         side = pos_dict['side']
         size = pos_dict['contracts']
@@ -128,7 +128,7 @@ def pnl_close():
         in_pos = True
         if perc > 0:
             print('we are in a winning position')
-            if perc > target:
+            if perc >= target:
                 print(f'hit our target of: {target}%')
                 pnl_close = True
                 kill_switch()
@@ -136,6 +136,12 @@ def pnl_close():
                 print('we have not hit our target yet')
         elif perc < 0:
             print('we are in a losing position but holding on')
+            if perc <= -stop_loss:
+                print(f'hit our stop loss of: {stop_loss}%')
+                pnl_close = True
+                kill_switch()
+            else:
+                print('because we have not hit our stop loss')
         else:
             print('we are not in position')
             in_pos = False

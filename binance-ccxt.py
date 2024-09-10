@@ -137,7 +137,7 @@ def kill_switch() :
   is_long = open_position([3])
   kill_size = open_position([2])
 
-  print(f'******openposi {}, long {is_long}, size {kill_size}')
+  #print(f'******openposi {}, long {is_long}, size {kill_size}')
 
   while openposi == True :
     print('starting kill swith loop til limit fil')
@@ -172,7 +172,7 @@ def pnl_close() :
 
   print('checking to see if its time to exit')
 
-  params = ['type': 'swap', 'code'; 'USDT']
+  params = ['type', 'swap', 'code', 'USDT']
   pos_dict = exchange.fetch_positions(params=params)
   print(pos_dict)
   

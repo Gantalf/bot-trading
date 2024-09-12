@@ -1,0 +1,11 @@
+Short trade - Entry: 57876.5, Exit: 57297.735, PNL: 170112.73650804284
+Long trade - Entry: 57645.5, Exit: 58221.955, PNL: 149627.48835503703
+Long trade - Entry: 57716.3, Exit: 58293.463, PNL: 149811.260309058
+Long trade - Entry: 57775.5, Exit: 58353.255, PNL: 149964.9227338886
+Long trade - Entry: 57708.9, Exit: 58285.989, PNL: 149792.05250595397
+Long trade - Entry: 57752.5, Exit: 58330.025, PNL: 149905.22280532343
+Long trade - Entry: 57765.0, Exit: 58342.65, PNL: 149937.66841867464
+Long trade - Entry: 57665.0, Exit: 58818.3, PNL: 3447.3880927860578
+Long trade abierto - Entry: 57471.2
+Long trade abierto - Entry: 57379.3
+Long trade abierto - Entry: 57421.2
